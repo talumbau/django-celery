@@ -1,7 +1,7 @@
 from celery import Celery
+import os
 
-#app = Celery('tasks', broker='redis://localhost', backend='redis://localhost:6379/0')
-app = Celery('tasks')
+app = Celery('tasks', broker=os.environ['REDISGREEN_URL'], backend=os.environ['REDISGREEN_URL'])
 
 import time
 @app.task
