@@ -32,11 +32,11 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-BROKER_URL = 'redis://localhost:6379/0'
-BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}  # 1 hour.
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+BROKER_URL=os.environ['REDISGREEN_URL']
+CELERY_RESULT_BACKEND=os.environ['REDISGREEN_URL']
 BROKER_TRANSPORT_OPTIONS = {'fanout_prefix': True,
-                            'fanout_patterns': True}
+                            'fanout_patterns': True,
+                            'visibility_timeout': 3600}  # 1 hour.
 
 
 # Application definition
