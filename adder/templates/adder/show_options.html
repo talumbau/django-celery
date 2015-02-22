@@ -1,0 +1,12 @@
+<h1>This is a test</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'adder:plus_nine' %}" method="post">
+{% csrf_token %}
+<input type="radio" name="choice" id="choice1" value="7">
+<label for="choice1">7</label>
+<input type="radio" name="choice" id="choice2" value="8">
+<label for="choice2">8</label>
+<input type="submit" value="Add it!" />
+</form>
