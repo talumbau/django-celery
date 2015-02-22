@@ -10,4 +10,4 @@ def add(x, y):
 @app.task
 def doin_work(val):
     time.sleep(3)
-    return val + 9
+    return val + 3
