@@ -1,6 +1,7 @@
 from celery import Celery
 
-app = Celery('tasks', broker='redis://localhost', backend='redis://localhost:6379/0')
+#app = Celery('tasks', broker='redis://localhost', backend='redis://localhost:6379/0')
+app = Celery('tasks')
 
 import time
 @app.task
